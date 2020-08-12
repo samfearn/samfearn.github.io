@@ -5,9 +5,6 @@
  * Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
 */
 
-/* If you want to load additional fonts from google, do so here */
-/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');*/
-
 /* Box sizing rules */
 *,
 *::before,
@@ -136,7 +133,7 @@ kbd {
 }
 
 /* Better tables */
-table {
+table:not(.ltx_eqn_table) {
   border-collapse: collapse;
   border-spacing: 0;
   width: auto;
@@ -149,19 +146,19 @@ table {
   counter-increment: caption;
 }
 /* add bottom border on column table headings  */
-table tr > th[scope='col'] {
+table:not(.ltx_eqn_table) tr > th[scope='col'] {
   border-bottom: 1.36px solid black;
 }
 /* add right border on row table headings  */
-table tr > th[scope='row'] {
+table:not(.ltx_eqn_table) tr > th[scope='row'] {
   border-right: 1.36px solid black;
 }
-table > tbody > tr:first-child > td,
-table > tbody > tr:first-child > th {
+table:not(.ltx_eqn_table) > tbody > tr:first-child > td,
+table:not(.ltx_eqn_table) > tbody > tr:first-child > th {
   border-top: 1.36px solid black;
 }
-table > tbody > tr:last-child > td,
-table > tbody > tr:last-child > th {
+table:not(.ltx_eqn_table) > tbody > tr:last-child > td,
+table:not(.ltx_eqn_table) > tbody > tr:last-child > th {
   border-bottom: 1.36px solid black;
 }
 
@@ -203,7 +200,7 @@ table.imageTable caption {
 }
 
 figcaption::before {
-	content: 'Figure ' attr(data-number) ': ';
+  /*content: 'Figure ' attr(data-number) ': ';*/
 }
 
 /* allow scroll on the x-axis */
@@ -335,19 +332,6 @@ dl dd {
 .proposition::before {
 /*  content: 'Lemma ' counter(theorem) '. ';*/
   content: 'Proposition ' attr(data-number) '. ' ;
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* Remark */
-.remark {
-  display: block;
-  margin: 12px 0;
-  font-style: normal;
-}
-.remark::before {
-/*  content: 'Lemma ' counter(theorem) '. ';*/
-  content: 'Remark ' attr(data-number) '. ' ;
   font-weight: bold;
   font-style: normal;
 }
@@ -484,4 +468,8 @@ h6 {
 		overflow-x: scroll;
 		max-width: 100%;
 	}
+}
+
+.ltx_runin + .ltx_para, .ltx_runin + .ltx_para p, .ltx_runin + p {
+	display: revert;
 }
