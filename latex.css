@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
 */
 
-/* If you want to load additional fonts from google, do so here */
+/* If you want to load additional fonts from google, do so here*/
 /*@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');*/
 
 /* Box sizing rules */
@@ -335,6 +335,19 @@ dl dd {
 .proposition::before {
 /*  content: 'Lemma ' counter(theorem) '. ';*/
   content: 'Proposition ' attr(data-number) '. ' ;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Corollary */
+.corollary {
+  display: block;
+  margin: 12px 0;
+  font-style: italic;
+}
+.corollary::before {
+/*  content: 'Corollary ' counter(theorem) '. ';*/
+  content: 'Corollary ' attr(data-number) '. ' ;
   font-weight: bold;
   font-style: normal;
 }
