@@ -342,7 +342,7 @@ dl dd {
 }
 
 .exampleqed::after{
-    content: '◾️';
+    content: '▲';
     position: absolute;
     right: -12px;
     bottom: -2px;
