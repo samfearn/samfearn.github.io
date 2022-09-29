@@ -326,6 +326,20 @@ dl dd {
   font-style: normal;
 }
 
+/* Examples */
+.examples {
+/*  counter-increment: examples;*/
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+.examples::before {
+/*  content: 'Examples ' counter(example) '. ';*/
+  content: 'Examples ' attr(data-number) '. ' ;
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* Example with QED */
 .exampleqed {
 /*  counter-increment: example;*/
